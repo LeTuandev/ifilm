@@ -1,0 +1,58 @@
+.breadcrumb {
+    background-color: unset;
+}
+
+.breadcrumb-item.active {
+    color: #000000;
+}
+
+.btn-add {
+    background-color: #56C500;
+    color: #FFFFFF;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.btn-save {
+    border-radius: 5px 0px 0px 0px;
+    opacity: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    background-color: #EA5050;
+    color: #FFFFFF;
+    padding: 8px;
+}
+
+.modal-header {
+    border-bottom: unset;
+}
+
+.modal-footer {
+    border-top: unset;
+}
+
+.form-inline label {
+    justify-content: flex-start;
+    margin-bottom: 4px;
+}
+
+.modal-content {
+    background-color: #E6E6E6;
+}
+
+.modal-title {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.label-cinema,
+.label-address {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+    color: #000000;
+}
