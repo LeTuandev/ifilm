@@ -27,8 +27,9 @@ class UserController extends Controller
     public function updateProfile(UpdateProfileRequest $request)
     {
         $file = $request->avatar;
-        $avatar = $this->saveImgBase64($file, 'avatar');
         $user = auth()->user();
+        $this->deleteImgbase64($user->avatar, 'avatar');
+        $avatar = $this->saveImgBase64($file, 'avatar');
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
@@ -77,6 +78,15 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    protected function deleteImgbase64($avatar, $folder)
+    {
+        $storage = Storage::disk('public');
+        $isDirectory = $storage->exists($folder);
+        if ($avatar && $isDirectory) {
+            Storage::disk('public')->delete('avatar/' . $avatar);
+        }
     }
 
     protected function saveImgBase64($file, $folder)

@@ -24,6 +24,9 @@
         .bootstrap-select {
             border: 1px solid #ced4da !important
         }
+        .toast-success {
+            background-color: #51A351 !important;
+        }
     </style>
     @vite(['resources/sass/app.scss'])
 
