@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UpdateProfileRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
@@ -34,6 +35,7 @@ class UserController extends Controller
             'phone' => $request->phone,
             'avatar' => $avatar ?: $user->avatar,
         ]);
+        Artisan::call('storage:link');
         return redirect()->back()->with('success', 'update profile thành công');
     }
 
